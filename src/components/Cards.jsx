@@ -53,7 +53,7 @@ const Cards = () => {
             <Text>Conheça alguns dos nossos principais cursos</Text>
           </Box>
       </Flex>
-      <Flex maxW='1200px' m='0 auto' py={8} gap={4} flexDirection={{base: "column", md: "row"}} >
+      <Flex w='100%' maxW='1200px' m='0 auto' py={8} gap={4} flexDirection={{base: "column", md: "row"}} justifyContent='center' >
       <Card maxW='sm'>
         <CardBody>
           <Image

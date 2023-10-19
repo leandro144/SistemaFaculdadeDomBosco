@@ -51,16 +51,13 @@ const Mobile = () => {
                         <Link>home</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>insitucional</Link>
+                        <Link>Cursos</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>acadêmico</Link>
+                        <Link>Portal AVA</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>biblioteca</Link>
-                    </ListItem>
-                    <ListItem>
-                        <Link>processo seletivo</Link>
+                        <Link>Acesso ao diploma</Link>
                     </ListItem>
                     <ListItem>
                         <Link>radio db</Link>

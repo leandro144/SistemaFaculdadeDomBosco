@@ -59,19 +59,16 @@ const Menu = () => {
                         <Link>home</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>insitucional</Link>
+                        <Link href='https://faculdadesdombosco.com.br/categorias-de-cursos/graduacao/'>Cursos</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>acadêmico</Link>
+                        <Link href='https://iegp.portalava.com.br/login'>Portal AVA</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>biblioteca</Link>
+                        <Link>Acesso ao diploma</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>processo seletivo</Link>
-                    </ListItem>
-                    <ListItem>
-                        <Link>radio db</Link>
+                        <Link href='https://www.domboscoradio.com/'>radio db</Link>
                     </ListItem>
                     <ListItem>
                         <Link>contato</Link>
