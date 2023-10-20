@@ -36,12 +36,12 @@ const Main = () => {
         <SwiperSlide>
           <Box 
           w='100%'
-          h={{base: "55vh", sm: "70vh"}}
+          h={{base: "60vh", sm: "80vh"}}
           bgImage="url('./assets/main.jpg')"
           bgSize="cover"
           >
             <Flex w='100%' h='100%' alignItems='center' textAlign={'left'}>
-              <Flex w='100%' maxW='1200px' margin='0 auto' color='#fff' flexDir='column' gap={12}>
+              <Flex w='100%' maxW='1200px' margin='0 auto' color='#fff' flexDir='column' gap={{base: '1.5rem', sm: '3rem'}}>
                 <Heading fontSize={{base: '2.5rem', md: '3.5rem'}}>Graduação é na <Text as={'span'} color={'#00566a'}>DOM</Text><Text as={'span'} color='#00b2a6'>BOSCO</Text></Heading> 
                 <Heading fontSize={{base: '1.5rem', md: '2.5rem'}} fontWeight={'regular'}>1° Semestre de <Text as={'span'} fontWeight={'bold'}>2024</Text></Heading>
                 <Heading fontSize={{base: '1.5rem', md: '2.5rem'}}>Inscrições até 06/12</Heading>
@@ -56,7 +56,7 @@ const Main = () => {
         <SwiperSlide>
         <Box 
           w='100%'
-          h={{base: "55vh", sm: "70vh"}}
+          h={{base: "60vh", sm: "80vh"}}
           bgImage="url('./assets/main3.jpg')"
           bgSize="cover"
           bgPosition='center'

@@ -1,5 +1,6 @@
 import Cards from '@/components/Cards'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Menu from '@/components/Menu'
@@ -13,6 +14,7 @@ const home = () => {
       <Main />
       <Cards />
       <Contact />
+      <Footer />
     </>
   )
 }
