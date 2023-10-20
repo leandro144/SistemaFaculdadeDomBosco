@@ -65,7 +65,7 @@ const Menu = () => {
                         <Link href='https://iegp.portalava.com.br/login'>Portal AVA</Link>
                     </ListItem>
                     <ListItem>
-                        <Link>Acesso ao diploma</Link>
+                        <Link href='/access'>Acesso ao diploma</Link>
                     </ListItem>
                     <ListItem>
                         <Link href='https://www.domboscoradio.com/'>radio db</Link>

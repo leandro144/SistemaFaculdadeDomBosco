@@ -26,10 +26,10 @@ const Cards = () => {
               <Icon as={AiFillBook} boxSize={16} color='#fff' />
             </Box>
             <Box>
-              <Heading>DIVERSOS CURSOS</Heading>
+              <Heading>CURSOS</Heading>
             </Box>
             <Box>
-              <Text>Amplo leque de cursos nas mais variadas áreas do conhecimento e profissional. Escolha o seu e comece a escrever a sua história.</Text>
+              <Text>Cursos de Ciências Contábeis e Administração Publica, áreas do conhecimento e profissional. Escolha o seu e comece a escrever a sua história.</Text>
             </Box>
           </Flex>
         </Flex>

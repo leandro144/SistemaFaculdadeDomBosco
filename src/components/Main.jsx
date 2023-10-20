@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import VLibras from '@djpfs/react-vlibras'
 import React from 'react'
 import { useRef } from 'react';
 
@@ -75,6 +76,7 @@ const Main = () => {
           <span ref={progressContent}></span>
         </div>
       </Swiper>
+      <VLibras forceOnload={true} />
     </>
   )
 }
