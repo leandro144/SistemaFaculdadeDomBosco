@@ -36,16 +36,16 @@ const Main = () => {
         <SwiperSlide>
           <Box 
           w='100%'
-          h="85vh"
+          h={{base: "55vh", sm: "70vh"}}
           bgImage="url('./assets/main.jpg')"
           bgSize="cover"
           >
             <Flex w='100%' h='100%' alignItems='center' textAlign={'left'}>
               <Flex w='100%' maxW='1200px' margin='0 auto' color='#fff' flexDir='column' gap={12}>
-                <Heading fontSize={'3.2rem'}>Graduação é na <Text as={'span'} color={'#00566a'}>DOM</Text><Text as={'span'} color='#00b2a6'>BOSCO</Text></Heading> 
-                <Heading fontSize={'2.5rem'} fontWeight={'regular'}>1° Semestre de <Text as={'span'} fontWeight={'bold'}>2024</Text></Heading>
-                <Heading fontSize={'2.5rem'}>Inscrições até 06/12</Heading>
-                <Box border={'1px solid #fff'} p={4} maxW='400px'>
+                <Heading fontSize={{base: '2.5rem', md: '3.5rem'}}>Graduação é na <Text as={'span'} color={'#00566a'}>DOM</Text><Text as={'span'} color='#00b2a6'>BOSCO</Text></Heading> 
+                <Heading fontSize={{base: '1.5rem', md: '2.5rem'}} fontWeight={'regular'}>1° Semestre de <Text as={'span'} fontWeight={'bold'}>2024</Text></Heading>
+                <Heading fontSize={{base: '1.5rem', md: '2.5rem'}}>Inscrições até 06/12</Heading>
+                <Box border={'1px solid #fff'} p={4} maxW={{base: '350px', sm: '400px'}}>
                   <Text fontSize='1.3rem' textAlign='justify'>Descontos especias, de até 50%<br></br> nas mensalidades,<br></br> nos cursos de graduação DOMBOSCO</Text>
                 </Box>
                 
@@ -56,8 +56,8 @@ const Main = () => {
         <SwiperSlide>
         <Box 
           w='100%'
-          h='85vh'
-          bgImage="url('./assets/main2.jpeg')"
+          h={{base: "55vh", sm: "70vh"}}
+          bgImage="url('./assets/main3.jpg')"
           bgSize="cover"
           bgPosition='center'
           >
