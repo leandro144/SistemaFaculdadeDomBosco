@@ -39,7 +39,8 @@ const Menu = () => {
                             fontSize='14px' 
                             lineHeight='19px' 
                             color='#005b72' 
-                            fontWeight='700'>ACESSO AO DIPLOMA</Link>
+                            href='/access'
+                            fontWeight='700'>ACESSO ADMIN</Link>
                         </Box>
                     </Flex>
                 </Flex>
@@ -65,7 +66,7 @@ const Menu = () => {
                         <Link href='https://iegp.portalava.com.br/login'>Portal AVA</Link>
                     </ListItem>
                     <ListItem>
-                        <Link href='/access'>Acesso ao diploma</Link>
+                        <Link href='/'>Acesso ao diploma</Link>
                     </ListItem>
                     <ListItem>
                         <Link href='https://www.domboscoradio.com/'>radio db</Link>

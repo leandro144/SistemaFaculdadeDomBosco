@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "seu_usuario",
+    "password": "Loja1364",
+    "database": "seu_banco_de_dados",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "seu_usuario",
+    "password": "sua_senha",
+    "database": "seu_banco_de_dados",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
