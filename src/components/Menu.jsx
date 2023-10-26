@@ -40,7 +40,7 @@ const Menu = () => {
                             lineHeight='19px' 
                             color='#005b72' 
                             href='/access'
-                            fontWeight='700'>ACESSO ADMIN</Link>
+                            fontWeight='700'>ACESSO AO DIPLOMA</Link>
                         </Box>
                     </Flex>
                 </Flex>

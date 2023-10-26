@@ -1,69 +1,66 @@
-import { Box, Button, Center, Container, Flex, Input, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Flex, FormControl, FormLabel, Input, Button, Box, Heading, Text, Image } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import api from '@/api/services'
 
-export default function Home() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    rg: '',
-    cpf: '',
-    attachment: null,
-  });
+const DownloadForm = () => {
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [resinput, setResInput] = useState('')
+  const [data, setData] = useState('')
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, attachment: e.target.files[0] });
-  };
-
-  const handleSubmit = async () => {
-    const formDataToSend = new FormData();
-    formDataToSend.append('fullName', formData.fullName);
-    formDataToSend.append('rg', formData.rg);
-    formDataToSend.append('cpf', formData.cpf);
-    formDataToSend.append('attachment', formData.attachment);
-
-    try {
-      const response = await fetch('/api/submit-form', {
-        method: 'POST',
-        body: formDataToSend,
-      });
-      if (response.ok) {
-        console.log('Formulário enviado com sucesso!');
-      } else {
-        console.error('Erro ao enviar o formulário.');
-      }
-    } catch (error) {
-      console.error('Erro ao enviar o formulário:', error);
+  async function handlesearch(){
+    if(resinput === ''){
+      alert("Por favor preencha este campo")
+      return;
     }
-  };
+  
+    try {
+      const response = await api.get(`${resinput}`)
+      setData(response.data);
+      setResInput("")
+    } catch {
+      alert("Erro ao buscar");
+      setResInput("")
+    }
+  }
+
 
   return (
-    <Flex 
-    alignItems={'center'}
-    w={'100%'}
-    h={'76.8vh'}
-    justifyContent={'center'}
-    color={'#808080'}
-    bg={'#053057'}>
-        <Center>
-            <Box p={4} border="1px solid #053057" borderRadius="md" boxShadow="md" w="400px" bg={'#fff'} py={8}>
-                <Text fontSize="xl" fontWeight="semibold" mb={2} color={'#053057'}>
-                Formulário
-                </Text>
-                <Input name="fullName" placeholder="Nome Completo" mb={4} onChange={handleChange} />
-                <Input name="rg" placeholder="RG" mb={5} onChange={handleChange} />
-                <Input name="cpf" placeholder="CPF" mb={5} onChange={handleChange} />
-                <Input type="file" name="attachment" mb={5} onChange={handleFileChange} />
-                <Flex justifyContent={'center'}>
-                    <Button colorScheme="blue" onClick={handleSubmit} w={'md'}>Enviar</Button>
-                </Flex>
-                
-            </Box>
-    </Center>
-    </Flex>
-    
-  );
+    <>
+      <Flex 
+      justifyContent={'center'}
+      flexDir={'column'}
+      alignItems={'center'}
+      w={'100%'} 
+      h={'76.8vh'} 
+      bg={'#053057'}
+      >
+          <FormControl as={'fieldset'} maxW={'428px'} color={'#fff'} py={8} >
+              <FormLabel as={'legend'}>
+                  *Digite seu código para ter acesso ao pdf do seu diploma
+              </FormLabel>
+              <Flex gap={4}>
+                <Input 
+                type='text' 
+                placeholder='Digite o código'
+                value={resinput}
+                onChange={((e) => setResInput(e.target.value))}
+                 />
+                <Button onClick={handlesearch}>Enviar</Button>
+              </Flex>
+          </FormControl>
+          {Object.keys(data).length > 0 && (
+            <>
+              <Flex flexDirection={'column'} color={'#fff'} gap={4} textAlign={'center'}>
+                <Heading>Diploma Solicitado</Heading>
+                <Text as={'span'}>Nome: {data.name}</Text>
+                <Text as={'span'}>CPF: {data.Title}</Text>
+                <Text as={'span'}>RG: {data.price}</Text>
+              </Flex>
+            </>
+          )}
+      </Flex>
+    </>
+  )
 }
+
+export default DownloadForm
