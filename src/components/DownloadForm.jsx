@@ -1,5 +1,6 @@
-import { Flex, FormControl, FormLabel, Input, Button, Box, Heading, Text, Image } from '@chakra-ui/react'
+import { Flex, FormControl, FormLabel, Input, Button, Box, Heading, Text, Image, Link } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import 'react-toastify/dist/ReactToastify.css';
 import api from '@/api/services'
 
 const DownloadForm = () => {
@@ -50,11 +51,24 @@ const DownloadForm = () => {
           </FormControl>
           {Object.keys(data).length > 0 && (
             <>
-              <Flex flexDirection={'column'} color={'#fff'} gap={4} textAlign={'center'}>
-                <Heading>Diploma Solicitado</Heading>
-                <Text as={'span'}>Nome: {data.name}</Text>
-                <Text as={'span'}>CPF: {data.Title}</Text>
-                <Text as={'span'}>RG: {data.price}</Text>
+              <Flex 
+              flexDirection={'column'} 
+              color={'#fff'} 
+              gap={4} 
+              textAlign={'center'} 
+              borderRadius={8}
+              py={4}
+              bg={'#0C5164'}>
+                <Heading fontSize={'xl'}>Diploma Solicitado</Heading>
+                <Flex flexDir={'column'} gap={4} marginTop={4}>
+                  <Box margin={'0 auto'}>
+                    <Image src={data.foto} alt='image' w={'120px'} h={'150px'} />
+                  </Box>
+                  <Text as={'span'}>Nome: {data.name}</Text>
+                  <Text as={'span'}>CPF: {data.Title}</Text>
+                  <Text as={'span'}>RG: {data.price}</Text>
+                  <Link href={data.href} download={data.filename}>Baixar diploma</Link>
+                </Flex>
               </Flex>
             </>
           )}
