@@ -65,8 +65,8 @@ const DownloadForm = () => {
                     <Image src={data.foto} alt='image' w={'120px'} h={'150px'} />
                   </Box>
                   <Text as={'span'}>Nome: {data.name}</Text>
-                  <Text as={'span'}>CPF: {data.Title}</Text>
-                  <Text as={'span'}>RG: {data.price}</Text>
+                  <Text as={'span'}>CPF: {data.cpf}</Text>
+                  <Text as={'span'}>RG: {data.rg}</Text>
                   <Link href={data.href} download={data.filename}>Baixar diploma</Link>
                 </Flex>
               </Flex>
