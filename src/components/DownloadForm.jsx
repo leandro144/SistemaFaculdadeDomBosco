@@ -32,7 +32,7 @@ const DownloadForm = () => {
       flexDir={'column'}
       alignItems={'center'}
       w={'100%'} 
-      h={'76.8vh'} 
+      h={'90vh'} 
       bg={'#053057'}
       >
           <FormControl as={'fieldset'} maxW={'428px'} color={'#fff'} py={8} >
