@@ -37,7 +37,7 @@ const DownloadForm = () => {
       >
           <FormControl as={'fieldset'} maxW={'428px'} color={'#fff'} py={8} >
               <FormLabel as={'legend'}>
-                  *Digite seu código para ter acesso ao pdf do seu diploma
+                  *Digite seu código de validação para ter acesso ao pdf do seu diploma
               </FormLabel>
               <Flex gap={4}>
                 <Input 
