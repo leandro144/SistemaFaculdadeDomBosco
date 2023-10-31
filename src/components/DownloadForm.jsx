@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import api from '@/api/services'
 
 const DownloadForm = () => {
+  
 
   const [resinput, setResInput] = useState('')
   const [data, setData] = useState('')
@@ -77,14 +78,5 @@ const DownloadForm = () => {
   )
 }
 
-export async function getServerSideProps({ params }) {
-  // Obtenha o ID do usuário a partir dos parâmetros da URL
-  const userId = params.id;
-
-  // Procure o usuário com base no ID na fonte de dados (arquivo JSON)
-  return {
-    props: { user },
-  };
-}
 
 export default DownloadForm
