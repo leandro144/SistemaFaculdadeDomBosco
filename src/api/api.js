@@ -19,7 +19,7 @@ const db = mysql.createConnection({
   database: 'dombosco'
 });
 
-// Conecta ao banco de dados
+
 db.connect(err => {
   if (err) {
     console.error('Erro ao conectar ao banco de dados:', err);
@@ -28,7 +28,6 @@ db.connect(err => {
   console.log('Conexão ao banco de dados bem-sucedida');
 });
 
-// Rota para obter um aluno específico do banco de dados com base no ID
 app.get('/dados/:id', (req, res) => {
   const userId = req.params.id;
   const query = 'SELECT * FROM alunos WHERE id = ?';
