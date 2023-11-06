@@ -30,7 +30,7 @@ const Diploma = () => {
             {isFront ? (
               <Center h="100%">
                 <Image 
-                 src="../../../../assets/diplomas/guilhermemog.jpeg"
+                 src="../../../../assets/diplomas/guilhermemog.jpg"
                  alt="imagem"
                  w="100%"
                  h="100%"
@@ -40,7 +40,7 @@ const Diploma = () => {
             ) : (
               <Center h="100%">
                 <Image 
-                 src="../../../../assets/diplomas/guilhermemog-verso.jpeg"
+                 src="../../../../assets/diplomas/guilhermemog-verso.jpg"
                  alt="imagem"
                  w="100%"
                  h="100%"
