@@ -32,7 +32,6 @@ function ApiData() {
         <Flex color={'#656565'} fontWeight={700} gap='5px'>Código validação consultado:<Text fontWeight={'normal'}> {id}</Text></Flex>
         <Flex color={'#656565'} fontWeight={700} gap='5px'>Status do diploma:<Text fontWeight={'normal'}> Válido</Text></Flex>
         <Flex color={'#656565'} fontWeight={700} gap='5px'>Nome:<Text fontWeight={'normal'}> {data.nome}</Text></Flex>
-        <Flex color={'#656565'} fontWeight={700} gap='5px'>RG:<Text fontWeight={'normal'}> {data.rg}</Text></Flex>
       </Box>
       
       <Box  py={'1rem'}>
@@ -42,7 +41,7 @@ function ApiData() {
       <Box w={'100%'} maxW={'1024px'} margin={'0 auto'}>
         <Text fontSize={'1.5rem'} color={'#808080'} >Downloads</Text>
         <Flex flexDir={'column'} color={'#1B72E2'}>
-          <Link href="/" download={'xml-diploma'}>diploma original assinado (XML)</Link>
+          <Link href={data.xml_data} download={'xml-diplomq'}>diploma original assinado (XML)</Link>
           <Link href={data.pdf} download={data.file_name}>RVDD (Representação visual - PDF)</Link>
         </Flex>
       </Box>
