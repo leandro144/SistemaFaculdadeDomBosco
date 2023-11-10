@@ -1,15 +1,10 @@
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors'); 
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // Permite somente a origem http://localhost:3000
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
-
+app.use(cors());
 
 // Configuração de conexão com o banco de dados
 const db = mysql.createConnection({
