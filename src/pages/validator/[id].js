@@ -14,17 +14,11 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`https://sistema-faculdade-dom-bosco.vercel.app/dados/${id}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Erro na requisição: ${response.statusText}`);
-        }
-        return response.json();
-      })
+    fetch(`http://localhost:8080/dados/${id}`) // Substitua pela URL da sua API com o ID
+      .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error("Erro ao buscar dados:", error));
   }, [id]);
-  
 
   return (
     <>

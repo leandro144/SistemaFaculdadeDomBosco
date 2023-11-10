@@ -10,6 +10,7 @@ const Validation = () => {
 
     const handleSearch = () => {
         router.push(`/validator/${inputData}`);
+        
     };
 
     return (

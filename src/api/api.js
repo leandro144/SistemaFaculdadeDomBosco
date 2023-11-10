@@ -1,17 +1,15 @@
 const express = require('express');
 const mysql = require('mysql2');
-const cors = require('cors'); 
-
 const app = express();
 
+
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite somente a origem http://localhost:3000
+  res.setHeader('Access-Control-Allow-Origin', '*'); 
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
 
-app.use(cors());
 
 // Configuração de conexão com o banco de dados
 const db = mysql.createConnection({
@@ -33,6 +31,7 @@ db.connect(err => {
 app.get('/dados/:id', (req, res) => {
   const userId = req.params.id;
   const query = 'SELECT * FROM alunos WHERE id = ?';
+  const query2 = 'SELECT * FROM alunos WHERE id = ?';
 
   db.query(query, [userId], (err, results) => {
     if (err) {
