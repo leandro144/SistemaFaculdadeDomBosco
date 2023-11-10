@@ -28,10 +28,11 @@ db.connect(err => {
   console.log('Conexão ao banco de dados bem-sucedida');
 });
 
-app.get('/dados/:id', (req, res) => {
+app.get('/validator/:id', (req, res) => {
   const userId = req.params.id;
   const query = 'SELECT * FROM alunos WHERE id = ?';
-  const query2 = 'SELECT * FROM alunos WHERE id = ?';
+  const query2 = 'SELECT * FROM alunos WHERE id = 19853.665.7dfffd7f1b0a';
+  console.log(query2)
 
   db.query(query, [userId], (err, results) => {
     if (err) {
