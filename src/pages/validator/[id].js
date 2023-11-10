@@ -14,7 +14,7 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${id}`) // Substitua pela URL da sua API com o ID
+    fetch(`/validator/${id}`) // Substitua pela URL da sua API com o ID
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error("Erro ao buscar dados:", error));
