@@ -14,7 +14,7 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`/validator/${id}`)
+    fetch(`ep-dry-king-73197764-pooler.us-east-1.postgres.vercel-storage.com/validator/${id}`)
     .then((response) => {
     if (!response.ok) {
       throw new Error(`Erro na requisição: ${response.status}`);
