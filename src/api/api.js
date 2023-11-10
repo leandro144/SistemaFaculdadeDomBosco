@@ -28,7 +28,7 @@ db.connect(err => {
   console.log('Conexão ao banco de dados bem-sucedida');
 });
 
-app.get('/dados/:id', (req, res) => {
+app.get('/validator/:id', (req, res) => {
   const userId = req.params.id;
   const query = 'SELECT * FROM alunos WHERE id = ?';
 
