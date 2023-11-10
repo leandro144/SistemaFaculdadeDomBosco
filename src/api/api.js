@@ -1,15 +1,21 @@
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors'); 
 
 const app = express();
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://sistema-faculdade-dom-bosco.vercel.app/');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
   next();
 });
 
+app.use(cors());
 
 // Configuração de conexão com o banco de dados
 const db = mysql.createConnection({
