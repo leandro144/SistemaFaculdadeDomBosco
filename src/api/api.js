@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 const db = mysql.createConnection({
   host: 'srv796.hstgr.io',
   user: 'u336528174_root',
-  password: '=0Wal5vx2NE', // Coloque a senha do seu banco de dados aqui
+  password: 'hH?Mfka$25', // Coloque a senha do seu banco de dados aqui
   database: 'u336528174_diplomas'
 });
 
