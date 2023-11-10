@@ -1,10 +1,15 @@
 const express = require('express');
 const mysql = require('mysql2');
-const cors = require('cors'); 
 
 const app = express();
 
-app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://sistema-faculdade-dom-bosco.vercel.app/');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 
 // Configuração de conexão com o banco de dados
 const db = mysql.createConnection({
