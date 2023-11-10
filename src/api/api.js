@@ -13,10 +13,10 @@ app.use((req, res, next) => {
 
 // Configuração de conexão com o banco de dados
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '', // Coloque a senha do seu banco de dados aqui
-  database: 'dombosco'
+  host: 'srv796.hstgr.io',
+  user: 'u336528174_leo',
+  password: 'x#9C/CiVs', // Coloque a senha do seu banco de dados aqui
+  database: 'u336528174_diplomas'
 });
 
 
