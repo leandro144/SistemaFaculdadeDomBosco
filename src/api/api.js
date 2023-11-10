@@ -4,7 +4,7 @@ const app = express();
 
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*'); 
+  res.setHeader('Access-Control-Allow-Origin', 'https://sistema-faculdade-dom-bosco.vercel.app/'); 
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
@@ -31,8 +31,6 @@ db.connect(err => {
 app.get('/validator/:id', (req, res) => {
   const userId = req.params.id;
   const query = 'SELECT * FROM alunos WHERE id = ?';
-  const query2 = 'SELECT * FROM alunos WHERE id = 19853.665.7dfffd7f1b0a';
-  console.log(query2)
 
   db.query(query, [userId], (err, results) => {
     if (err) {
