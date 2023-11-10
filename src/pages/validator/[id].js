@@ -14,10 +14,19 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`/validator/${id}`) // Substitua pela URL da sua API com o ID
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error("Erro ao buscar dados:", error));
+    fetch(`/validator/${id}`)
+    .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Erro na requisição: ${response.status}`);
+    }
+    return response.json();
+    })
+    .then((data) => setData(data))
+    .catch((error) => {
+      console.error("Erro ao buscar dados:", error);
+      console.error("Resposta da API:", response);
+  });
+
   }, [id]);
 
 
