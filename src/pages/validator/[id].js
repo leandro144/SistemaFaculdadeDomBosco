@@ -1,10 +1,10 @@
 // pages/api-data/[id].js
 
 import Header from "@/components/Header";
-import Menu from "@/components/Menu";
 import { Heading, Box, Link, Text, Flex, Image } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import axios from 'axios';
 
 function ApiData() {
   const router = useRouter();
@@ -14,19 +14,16 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`ep-dry-king-73197764-pooler.us-east-1.postgres.vercel-storage.com/validator/${id}`)
-    .then((response) => {
-    if (!response.ok) {
-      throw new Error(`Erro na requisição: ${response.status}`);
-    }
-    return response.json();
-    })
-    .then((data) => setData(data))
-    .catch((error) => {
-      console.error("Erro ao buscar dados:", error);
-      console.error("Resposta da API:", response);
-  });
-
+    axios.get(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${id}`)
+      .then((response) => {
+        if (!response.data) {
+          throw new Error(`Erro na requisição: ${response.status}`);
+        }
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar dados:", error);
+      });
   }, [id]);
 
 
