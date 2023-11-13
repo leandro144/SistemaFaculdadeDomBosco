@@ -2,14 +2,30 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Header from '@/components/Header';
 import Menu from '@/components/Menu';
-import { Flex, FormControl, FormLabel, Input, Button, Text } from '@chakra-ui/react';
+import { Flex, FormControl, FormLabel, Input, Button, Text, useDisclosure } from '@chakra-ui/react';
+import api from '../api/services'
+import ApiModal from '@/components/ApiModal';
 
 const Validation = () => {
     const [inputData, setInputData] = useState('');
-    const router = useRouter();
+    const [user, setUser] = useState('');
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const handleSearch = () => {
-        router.push(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${inputData}`);
+    const handleSearch = async () => {
+        if (inputData === '') {
+            alert("Por favor preencha este campo");
+            return;
+        }
+
+        try {
+            const response = await api.get(`${inputData}`);
+            setUser(response.data);
+            onOpen();
+            setInputData('');
+        } catch {
+            alert("Erro ao buscar");
+            setInputData('');
+        }
     };
 
     return (
@@ -38,6 +54,8 @@ const Validation = () => {
                         <Button onClick={handleSearch}>Enviar</Button>
                     </Flex>
                 </FormControl>
+
+                <ApiModal isOpen={isOpen} onClose={onClose} apiData={user} />
             </Flex>
         </>
     );

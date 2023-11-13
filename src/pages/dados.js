@@ -6,14 +6,12 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 function ApiData() {
-  const router = useRouter();
-  const { id } = router.query;
 
   const [data, setData] = useState({});
 
 
   useEffect(() => {
-    fetch(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${id}`)
+    fetch(`https://json-diploma.onrender.com/diploma/`)
     .then((response) => {
     if (!response.ok) {
       throw new Error(`Erro na requisição: ${response.status}`);
