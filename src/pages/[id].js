@@ -13,7 +13,7 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`https://sistema-faculdade-dom-bosco.vercel.app//validator/${id}`)
+    fetch(`http://localhost:8080/validator/${id}`)
     .then((response) => {
     if (!response.ok) {
       throw new Error(`Erro na requisição: ${response.status}`);
