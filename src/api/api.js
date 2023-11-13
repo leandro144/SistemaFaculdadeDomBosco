@@ -11,10 +11,10 @@ app.use((req, res, next) => {
 
 // Configuração de conexão com o banco de dados
 const pool = new Pool({
-  user: 'default',
-  host: 'ep-dry-king-73197764.us-east-1.postgres.vercel-storage.com',
-  database: 'verceldb',
-  password: 'ifhA6ItQDd8Y',
+  user: '',
+  host: '',
+  database: '',
+  password: '',
   port: 5432,
   ssl: {
     rejectUnauthorized: false, // Opção para evitar o erro relacionado ao certificado
