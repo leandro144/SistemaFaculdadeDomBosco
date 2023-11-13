@@ -1,10 +1,10 @@
 // pages/api-data/[id].js
 
 import Header from "@/components/Header";
+import Menu from "@/components/Menu";
 import { Heading, Box, Link, Text, Flex, Image } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import axios from 'axios';
 
 function ApiData() {
   const router = useRouter();
@@ -14,13 +14,15 @@ function ApiData() {
 
 
   useEffect(() => {
-    axios.get(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${id}`)
+    fetch(`https://sistema-faculdade-dom-bosco.vercel.app/validation/validator/${id}`)
       .then((response) => {
-        if (!response.data) {
+        console.log('Status da resposta:', response.status); 
+        if (!response.ok) {
           throw new Error(`Erro na requisição: ${response.status}`);
         }
-        setData(response.data);
+        return response.json();
       })
+      .then((data) => setData(data))
       .catch((error) => {
         console.error("Erro ao buscar dados:", error);
       });
