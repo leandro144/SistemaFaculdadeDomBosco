@@ -9,7 +9,7 @@ const Validation = () => {
     const router = useRouter();
 
     const handleSearch = () => {
-        router.push(`/${inputData}`);
+        router.push(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${inputData}`);
     };
 
     return (

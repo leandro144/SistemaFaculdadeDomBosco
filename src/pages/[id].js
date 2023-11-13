@@ -1,7 +1,6 @@
 // pages/api-data/[id].js
 
 import Header from "@/components/Header";
-
 import { Box, Link, Text, Flex, Image } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -14,7 +13,7 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`http://localhost:8080/validator/${id}`)
+    fetch(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${id}`)
     .then((response) => {
     if (!response.ok) {
       throw new Error(`Erro na requisição: ${response.status}`);
