@@ -1,6 +1,7 @@
 // pages/api-data/[id].js
 
 import Header from "@/components/Header";
+
 import { Box, Link, Text, Flex, Image } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
