@@ -14,7 +14,7 @@ function ApiData() {
 
 
   useEffect(() => {
-    fetch(`https://sistema-faculdade-dom-bosco.vercel.app/validation/validator/${id}`)
+    fetch(`https://sistema-faculdade-dom-bosco.vercel.app/validator/${id}`)
       .then((response) => {
         console.log('Status da resposta:', response.status); 
         if (!response.ok) {
