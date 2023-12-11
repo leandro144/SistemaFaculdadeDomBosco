@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/dados/:id",
+        "destination": "https://auth-db796.hstgr.io/index.php?route=/sql&server=1&db=u336528174_diplomas&table=alunos&pos=0/:id"
+      }
+    ]
+  }
+  

@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const api = axios.create({
-    baseURL: "https://json-diploma.onrender.com/diploma/"
+    baseURL: "https://sistema-faculdade-dom-bosco.vercel.app"
 });
 
 export default api;
