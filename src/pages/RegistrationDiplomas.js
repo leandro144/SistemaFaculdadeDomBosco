@@ -80,7 +80,7 @@ const RegistrationDiplomas = () => {
           borderRadius="lg"
           boxShadow="lg"
           width="100%"
-          maxWidth="400px"
+          maxWidth="600px"
           bg="white"
           border="1px solid #e2e8f0"
         >

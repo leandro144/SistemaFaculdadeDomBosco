@@ -26,7 +26,7 @@ const SearchDiplomas = () => {
       setData(res.data);
       onOpen(); // Abrir modal após a busca
     } catch (error) {
-      console.log(error);
+      console.error("Erro ao buscar diploma:", error);
     }
   };
 
@@ -55,7 +55,7 @@ const SearchDiplomas = () => {
         </div>
       </div>
 
-      {/* Modal para exibir o link de download */}
+      {/* Modal para exibir os dados */}
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
@@ -63,8 +63,17 @@ const SearchDiplomas = () => {
           <ModalBody>
             {data ? (
               <div style={{ textAlign: 'center' }}>
-                <Text mb="4">Clique abaixo para fazer o download do diploma:</Text>
-                <Button colorScheme="green" as="a" href={data.fileUrl} download>
+                <Text fontSize="lg" fontWeight="bold">Informações do Diploma</Text>
+                <Text mt="2">Nome: {data.name}</Text>
+                <Text>E-mail: {data.email}</Text>
+                <Text>CPF: {data.cpf}</Text>
+                <Button 
+                  colorScheme="green" 
+                  as="a" 
+                  href={data.fileUrl} 
+                  download 
+                  mt="4"
+                >
                   Baixar Diploma
                 </Button>
               </div>
