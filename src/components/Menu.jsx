@@ -74,6 +74,9 @@ const Menu = () => {
                     <ListItem>
                         <Link>contato</Link>
                     </ListItem>
+                    <ListItem>
+                        <Link href='/login'>Perfil Administrador</Link>
+                    </ListItem>
                 </UnorderedList>
             </Flex>
         </Flex>
