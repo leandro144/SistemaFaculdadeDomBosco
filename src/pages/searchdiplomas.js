@@ -42,7 +42,8 @@ const SearchDiplomas = () => {
             value={code}
             onChange={(e) => setCode(e.target.value)}
             placeholder="Pesquise pelo código"
-            backgroundColor="#000"
+            backgroundColor="#fff"
+            color="#000"
             borderRadius="8px"
             padding="10px"
             width="300px"

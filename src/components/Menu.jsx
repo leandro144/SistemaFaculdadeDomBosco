@@ -39,7 +39,7 @@ const Menu = () => {
                             fontSize='14px' 
                             lineHeight='19px' 
                             color='#005b72' 
-                            href='/validation'
+                            href='/searchdiplomas'
                             fontWeight='700'>ACESSO AO DIPLOMA</Link>
                         </Box>
                     </Flex>
